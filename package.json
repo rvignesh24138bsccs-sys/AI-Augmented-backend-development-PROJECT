@@ -1,0 +1,39 @@
+{
+  "name": "ai-fittrack-api",
+  "version": "1.0.0",
+  "description": "FitTrack AI - Personalized fitness recommendations powered by AI (Node.js, Express, MongoDB, Google Gemini)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "predev": "node scripts/clean-ports.js",
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan,magenta\" \"nodemon server.js\" \"npm run dev --prefix client\"",
+    "dev:backend": "nodemon server.js",
+    "dev:frontend": "npm run dev --prefix client",
+    "clean": "node scripts/clean-ports.js",
+    "test": "node test_suite.js"
+  },
+  "keywords": [
+    "fitness",
+    "ai",
+    "express",
+    "mongodb",
+    "jwt",
+    "gemini"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "@google/generative-ai": "^0.15.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "morgan": "^1.12.1"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "nodemon": "^3.1.4"
+  }
+}
